@@ -22,11 +22,26 @@ python3 -m http.server 8000
 - 📴 Single-file, zero dependency — koi CDN/CSS/JS external nahi, offline chalta hai
 - 🌙 Dark theme
 
+## 📥 Direct Links (share karne layak)
+
+| Kya | Link |
+|---|---|
+| 🌐 Interactive website (search + animations) | https://anuragkumarnishad.github.io/chrome-cheatsheet/ |
+| 📄 Poora guide PDF (browser mein khulta hai) | https://anuragkumarnishad.github.io/chrome-cheatsheet/Chrome-Cheat-Sheet-Full.pdf |
+| 📄 PDF (GitHub par) | https://github.com/anuragkumarnishad/chrome-cheatsheet/blob/main/Chrome-Cheat-Sheet-Full.pdf |
+| 📘 Word document (.docx) | https://github.com/anuragkumarnishad/chrome-cheatsheet/blob/main/Chrome-Shortcut-Keys-aur-Settings.docx |
+| 💼 LinkedIn carousel PDF (10 slides) | https://github.com/anuragkumarnishad/chrome-cheatsheet/blob/main/linkedin-carousel.pdf |
+| ✍️ LinkedIn caption | https://github.com/anuragkumarnishad/chrome-cheatsheet/blob/main/linkedin-post.txt |
+
 ## 📁 Files
 
 | File | Kya hai |
 |---|---|
 | `index.html` | Interactive cheat-sheet website (single file) |
+| `Chrome-Cheat-Sheet-Full.pdf` | Poora guide PDF (A4, print-ready) |
+| `Chrome-Shortcut-Keys-aur-Settings.docx` | Word document |
+| `linkedin-carousel.pdf` | LinkedIn post ke liye 10-slide PDF |
+| `linkedin-post.txt` | LinkedIn caption (copy-paste ready) |
 | `README.md` | Ye page |
 | `LICENSE` | MIT |
 
