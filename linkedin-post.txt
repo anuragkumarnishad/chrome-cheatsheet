@@ -1,0 +1,31 @@
+Chrome use karte ho roz, par kya aapko ye 5 shortcuts pata hain? 👇
+
+Maine Chrome ki 100+ shortcut keys aur poori Settings ka ek Hinglish cheat-sheet banaya hai — 10 slides mein sab kuch:
+
+Slide 2 → Tab & Window: Ctrl+Shift+T se band hua tab wapas (sabse life-saving key!)
+Slide 3 → Address Bar magic: site + Tab = usi site ka search; Ctrl+K = kahin se bhi search
+Slide 4 → Page ke andar: Ctrl+Shift+R = hard refresh, F7 = caret browsing
+Slide 5 → Mouse tricks: Alt+Click = link download, Ctrl+Click = background tab
+Slide 6 → Tools: Shift+Esc = Chrome ka apna Task Manager (RAM khaane wala tab pakdo)
+Slide 7 → Settings tour: chrome://performance (Memory Saver), chrome://privacy, sab URLs ke saath
+Slide 8 → Privacy & speed must-dos: 3rd-party cookies block, password checkup
+Slide 9 → Secret pages: chrome://flags, chrome://net-internals…
+Slide 10 → Pro tips: pin tabs, tab groups, vertical tabs, install-as-app
+
+Bonus: kuch common galat shortcuts jo log maante hain —
+❌ Ctrl+, se Settings (Windows) → ✅ Alt+F phir S (ya chrome://settings)
+❌ Ctrl+Shift+Esc → ✅ Shift+Esc (Chrome Task Manager)
+❌ F3 = next match → ✅ Ctrl+G
+
+Saare shortcuts Google ki official help page se verify kiye hain.
+
+ Interactive website (search + animations ke saath): https://anuragkumarnishad.github.io/chrome-cheatsheet/
+🐙 GitHub repo: https://github.com/anuragkumarnishad/chrome-cheatsheet
+
+Save karo, team ke saath share karo, aur agar kaam aaye to repost karna mat bhoolna. ♻️
+
+Aapka favourite Chrome shortcut kaunsa hai? Comment mein batao. 👇
+
+— Anurag Kumar Nishad (@anuragkumarnishad)
+
+#Chrome #Productivity #TechTips #Shortcuts #WebDevelopment #DigitalSkills #LifeHacks #ChromeTips #Hinglish #LearnInPublic

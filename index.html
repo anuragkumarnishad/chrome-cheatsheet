@@ -3,117 +3,186 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chrome Shortcut Keys &amp; Settings — Cheat Sheet</title>
+<title>Chrome Cheat Sheet — Beast Mode Edition</title>
 <style>
-:root{--bg:#0f172a;--card:#1e293b;--txt:#e2e8f0;--mut:#94a3b8;--acc:#38bdf8;--acc2:#fbbf24;--line:#334155}
+:root{--bg:#05070f;--card:#0d1526;--txt:#e6edf7;--mut:#8b98b0;--acc:#38bdf8;--acc2:#fbbf24;
+ --pink:#f472b6;--grn:#34d399;--line:#1e2a44}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);
- font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px}
-header{position:sticky;top:0;z-index:20;background:var(--bg);
- border-bottom:1px solid var(--line);padding:12px 20px 8px;box-shadow:0 6px 18px rgba(0,0,0,.5)}
-h1{margin:0;font-size:22px;letter-spacing:.3px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);line-height:1.6;font-size:16px;
+ font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:-2;width:52vmax;height:52vmax;border-radius:50%;
+ filter:blur(90px);opacity:.16;pointer-events:none}
+body::before{background:radial-gradient(circle,#2563eb,transparent 60%);top:-20vmax;left:-15vmax;
+ animation:blob1 22s ease-in-out infinite alternate}
+body::after{background:radial-gradient(circle,#7c3aed,transparent 60%);bottom:-22vmax;right:-16vmax;
+ animation:blob2 26s ease-in-out infinite alternate}
+@keyframes blob1{to{transform:translate(18vmax,12vmax) scale(1.15)}}
+@keyframes blob2{to{transform:translate(-16vmax,-10vmax) scale(1.2)}}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;transform-origin:0 50%;transform:scaleX(0);
+ background:linear-gradient(90deg,var(--acc),var(--pink),var(--acc2))}
+header{position:sticky;top:0;z-index:20;background:rgba(5,7,15,.94);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:12px 20px 8px;box-shadow:0 8px 24px rgba(0,0,0,.55)}
+h1{margin:0;font-size:20px;letter-spacing:.4px}
+h1 .logo{display:inline-block;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .sub{margin:4px 0 0;color:var(--mut);font-size:13px}
-.search{width:100%;margin-top:10px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);
- background:#0b1220;color:var(--txt);font-size:15px}
-.search:focus{outline:2px solid var(--acc)}
+.search{width:100%;margin-top:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);
+ background:#0a101f;color:var(--txt);font-size:15px;transition:.25s}
+.search:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(56,189,248,.25),0 0 24px rgba(56,189,248,.25)}
 nav{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;margin-top:10px;padding-bottom:4px;
  scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 nav a{font-size:12px;color:var(--acc);text-decoration:none;border:1px solid var(--line);
- padding:3px 9px;border-radius:999px;white-space:nowrap;flex:0 0 auto}
-h2,h3{scroll-margin-top:175px}
+ padding:3px 10px;border-radius:999px;white-space:nowrap;flex:0 0 auto;transition:.2s}
+nav a:hover{transform:translateY(-2px);border-color:var(--acc);box-shadow:0 4px 14px rgba(56,189,248,.35);
+ background:rgba(56,189,248,.08)}
 main{max-width:1000px;margin:0 auto;padding:20px}
-h2{margin:34px 0 6px;font-size:20px;color:var(--acc2);border-bottom:2px solid var(--line);padding-bottom:6px}
-h3{margin:26px 0 8px;font-size:16px;color:var(--acc)}
-table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:14.5px;background:var(--card);
- border-radius:10px;overflow:hidden}
-th{background:#0b3552;color:#fff;text-align:left;padding:9px 12px;font-size:13px;letter-spacing:.4px;text-transform:uppercase}
-td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
-tr:nth-child(even) td{background:rgba(255,255,255,.03)}
-kbd{display:inline-block;background:#0b1220;border:1px solid #475569;border-bottom-width:2px;
- border-radius:5px;padding:1px 6px;font-family:Consolas,monospace;font-size:13px;color:#fde68a;white-space:nowrap}
-blockquote{margin:14px 0;padding:10px 14px;border-left:4px solid var(--acc2);background:rgba(251,191,36,.08);
- border-radius:0 8px 8px 0;color:#fef3c7;font-size:14.5px}
-ol li,ul li{margin:5px 0}
-.foot{color:var(--mut);font-size:12.5px;margin-top:28px;border-top:1px solid var(--line);padding-top:10px}
+.hero{text-align:center;padding:44px 10px 10px}
+.hero .big{font-size:clamp(34px,6vw,64px);font-weight:900;margin:0;letter-spacing:1px;line-height:1.1}
+.hero .big span{background:linear-gradient(90deg,var(--acc),var(--pink),var(--acc2),var(--acc));
+ background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+ animation:hue 6s linear infinite}
+@keyframes hue{to{background-position:300% 0}}
+#typed{min-height:26px;color:var(--mut);font-size:15px;font-family:Consolas,monospace}
+.stats{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:22px 0 8px}
+.stat{background:linear-gradient(160deg,#101a30,#0a101f);border:1px solid var(--line);border-radius:14px;
+ padding:12px 22px;min-width:120px;transition:.25s}
+.stat:hover{transform:translateY(-4px) scale(1.03);border-color:var(--acc2);box-shadow:0 10px 30px rgba(251,191,36,.18)}
+.stat b{display:block;font-size:30px;color:var(--acc2);font-family:Consolas,monospace}
+.stat span{font-size:12px;color:var(--mut);letter-spacing:.6px;text-transform:uppercase}
+h2{margin:44px 0 10px;font-size:22px;position:relative;padding-bottom:8px}
+h2,h3{scroll-margin-top:175px}
+h2:not(.big)::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:64px;border-radius:3px;
+ background:linear-gradient(90deg,var(--acc),var(--pink));transition:width 1s .2s}
+h2.in:not(.big)::after{width:180px}
+h3{margin:28px 0 8px;font-size:16px;color:var(--acc)}
+.card{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:12px 0 6px;
+ background:var(--card);box-shadow:0 10px 34px rgba(0,0,0,.35);transition:.3s}
+.card:hover{border-color:#2b3d63;box-shadow:0 14px 44px rgba(37,99,235,.22)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{background:linear-gradient(90deg,#0b3552,#123a63);color:#fff;text-align:left;padding:10px 14px;
+ font-size:12.5px;letter-spacing:.6px;text-transform:uppercase}
+td{padding:9px 14px;border-top:1px solid var(--line);vertical-align:top;transition:.2s}
+tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+tbody tr:hover td{background:rgba(56,189,248,.09);transform:translateX(3px)}
+kbd{display:inline-block;background:linear-gradient(180deg,#1c2a47,#101a30);border:1px solid #3b507c;
+ border-bottom:3px solid #0a1222;border-radius:7px;padding:2px 8px;font-family:Consolas,monospace;
+ font-size:13px;color:#fde68a;white-space:nowrap;box-shadow:0 2px 0 rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08);
+ transition:.15s;position:relative;overflow:hidden}
+kbd::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;transform:skewX(-25deg);
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transition:.4s}
+tr:hover kbd{transform:translateY(1px);border-bottom-width:1px;box-shadow:0 0 12px rgba(253,230,138,.35)}
+tr:hover kbd::after{left:120%}
+blockquote{margin:14px 0;padding:12px 16px;border-left:4px solid var(--acc2);background:rgba(251,191,36,.08);
+ border-radius:0 10px 10px 0;color:#fef3c7;font-size:14.5px}
+ol li,ul li{margin:6px 0}
+ol li::marker{color:var(--acc2);font-weight:700}
+ul li::marker{color:var(--acc)}
+.foot{color:var(--mut);font-size:12.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:10px}
 mark{background:#facc15;color:#111;border-radius:3px;padding:0 2px}
-tr.hide,section.hide{display:none}
+tr.hide{display:none}
+.rv{opacity:0;transform:translateY(26px);filter:blur(5px);transition:opacity .7s,transform .7s,filter .7s}
+.rv.in{opacity:1;transform:none;filter:none}
 .tip{position:fixed;right:16px;bottom:16px;background:var(--card);border:1px solid var(--line);
- padding:10px 14px;border-radius:10px;font-size:12.5px;color:var(--mut);max-width:280px;cursor:pointer}
+ padding:10px 14px;border-radius:12px;font-size:12.5px;color:var(--mut);max-width:290px;cursor:pointer;
+ box-shadow:0 10px 30px rgba(0,0,0,.5);animation:pop .6s .8s backwards}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+#top{position:fixed;left:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+ background:linear-gradient(160deg,#101a30,#0a101f);color:var(--acc);font-size:20px;cursor:pointer;z-index:30;
+ opacity:0;pointer-events:none;transition:.3s}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(56,189,248,.35)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+ .rv{opacity:1;transform:none;filter:none}}
 @media print{
  :root{--bg:#fff;--card:#fff;--txt:#000;--mut:#555;--line:#ccc}
- header{position:static;border:0}
- .search,nav,.tip{display:none}
- table{font-size:11px}
+ body::before,body::after,#stars,#bar,.search,nav,.tip,#top,.hero .stats{display:none}
+ header{position:static;border:0;box-shadow:none}
+ .rv{opacity:1!important;transform:none!important;filter:none!important}
+ .card{box-shadow:none}
  th{background:#e5e7eb;color:#000}
- kbd{background:#f3f4f6;color:#000;border-color:#999}
- body{font-size:11.5px}
+ kbd{background:#f3f4f6;color:#000;border-color:#999;box-shadow:none}
+ table{font-size:11px} body{font-size:11.5px}
+ .hero .big span{color:#000;background:none}
 }
 </style>
 </head>
 <body>
+<canvas id="stars"></canvas>
+<div id="bar"></div>
 <header>
-<h1>⌨️ Chrome Shortcut Keys &amp; Settings</h1>
-<p class="sub">Windows / Linux · Mac par Ctrl → ⌘, Alt → ⌥</p>
-<input id="q" class="search" type="search" placeholder="🔍 Kuch bhi search karo — jaise &quot;tab&quot;, &quot;zoom&quot;, &quot;password&quot;, &quot;flags&quot;…" autocomplete="off">
+<h1><span class="logo">⌨️</span> Chrome Shortcut Keys &amp; Settings</h1>
+<p class="sub">Windows / Linux · Mac par Ctrl → ⌘, Alt → ⌥ · Beast Mode Edition</p>
+<input id="q" class="search" type="search" placeholder="🔍 Kuch bhi search karo — &quot;tab&quot;, &quot;zoom&quot;, &quot;password&quot;, &quot;flags&quot;…" autocomplete="off">
 <nav><a href="#a-tab-window-sabse-zyada-kaam-aane-wale">A. Tab &amp; Window (sabse zyada kaam aane wale)</a><a href="#b-address-bar-ke-magic-tricks">B. Address Bar ke Magic Tricks</a><a href="#c-page-ke-andar">C. Page ke andar</a><a href="#d-links-tabs-ka-pro-use-mouse-ke-saath">D. Links &amp; Tabs ka Pro Use (mouse ke saath)</a><a href="#e-bookmarks">E. Bookmarks</a><a href="#f-chrome-ke-features-tools">F. Chrome ke Features &amp; Tools</a><a href="#1-you-and-google-chrome-settings-people">1. You and Google — chrome://settings/people</a><a href="#2-autofill-and-passwords-chrome-settings-autofill">2. Autofill and passwords — chrome://settings/autofill</a><a href="#3-privacy-and-security-chrome-settings-privacy">3. Privacy and security — chrome://settings/privacy</a><a href="#4-performance-chrome-settings-performance">4. Performance — chrome://settings/performance</a><a href="#5-appearance-chrome-settings-appearance">5. Appearance — chrome://settings/appearance</a><a href="#6-search-engine-chrome-settings-search">6. Search engine — chrome://settings/search</a><a href="#7-on-startup-chrome-settings-onstartup">7. On startup — chrome://settings/onStartup</a><a href="#8-downloads-chrome-settings-downloads">8. Downloads — chrome://settings/downloads</a><a href="#9-languages-chrome-settings-languages">9. Languages — chrome://settings/languages</a><a href="#10-accessibility-chrome-settings-accessibility">10. Accessibility — chrome://settings/accessibility</a><a href="#11-system-chrome-settings-system">11. System — chrome://settings/system</a><a href="#12-extensions-chrome-extensions">12. Extensions — chrome://extensions</a><a href="#13-ai-innovations-chrome-settings-ai">13. AI innovations — chrome://settings/ai</a><a href="#14-about-chrome-chrome-settings-help">14. About Chrome — chrome://settings/help</a></nav>
 </header>
 <main>
-<h1>Google Chrome — Shortcut Keys &amp; Settings ki Poori Guide</h1>
-<p class="sub"><em>(Windows / Linux ke liye. Mac par Ctrl ki jagah ⌘ Command, Alt ki jagah ⌥ Option)</em></p>
-<h2 id="part-1-shortcut-keys">PART 1 — SHORTCUT KEYS</h2>
-<h3 id="a-tab-window-sabse-zyada-kaam-aane-wale">A. Tab &amp; Window (sabse zyada kaam aane wale)</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + T</kbd></td><td>Naya tab kholo</td></tr><tr><td><kbd>Ctrl + N</kbd></td><td>Naya window kholo</td></tr><tr><td><kbd>Ctrl + Shift + N</kbd></td><td>Naya <strong>Incognito</strong> window</td></tr><tr><td><kbd>Ctrl + W</kbd> / <kbd>Ctrl + F4</kbd></td><td>Current tab band karo</td></tr><tr><td><kbd>Ctrl + Shift + W</kbd></td><td>Poora <strong>window</strong> band karo (<kbd>Alt + F4</kbd> bhi)</td></tr><tr><td><kbd>Ctrl + Shift + T</kbd></td><td><strong>Band hua tab wapas kholo</strong> (order ke hisaab se, kai baar tak)</td></tr><tr><td><kbd>Ctrl + 1</kbd> se <kbd>Ctrl + 8</kbd></td><td>Us number wale tab par jump (Ctrl+1 = pehla tab)</td></tr><tr><td><kbd>Ctrl + 9</kbd></td><td>Sabse right (aakhri) tab par jump</td></tr><tr><td><kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + PgDn</kbd></td><td>Agla tab</td></tr><tr><td><kbd>Ctrl + Shift + Tab</kbd> / <kbd>Ctrl + PgUp</kbd></td><td>Pichla tab</td></tr><tr><td><kbd>Ctrl + Shift + PgUp</kbd> / <kbd>Ctrl + Shift + PgDn</kbd></td><td>Tab ko left / right <strong>move</strong> karo</td></tr><tr><td><kbd>Alt + Home</kbd></td><td>Home page kholo</td></tr><tr><td><kbd>Alt + ←</kbd></td><td>History mein peeche</td></tr><tr><td><kbd>Alt + →</kbd></td><td>History mein aage</td></tr><tr><td><kbd>Alt + Space</kbd> phir <kbd>N</kbd></td><td>Window minimize karo</td></tr><tr><td><kbd>Alt + Space</kbd> phir <kbd>X</kbd></td><td>Window maximize karo</td></tr><tr><td><kbd>F11</kbd></td><td>Full screen on/off (band karne ke liye Esc dabaaye rakho)</td></tr><tr><td><kbd>F6</kbd> (2 baar) phir <kbd>Shift + Ctrl + H</kbd></td><td>Ek saath <strong>multiple tabs select</strong> karo</td></tr></table>
-<h3 id="b-address-bar-ke-magic-tricks">B. Address Bar ke Magic Tricks</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + L</kbd> / <kbd>Alt + D</kbd> / <kbd>F6</kbd></td><td>Address bar par focus</td></tr><tr><td><kbd>Ctrl + F5</kbd></td><td>Cursor ko address bar mein le jao</td></tr><tr><td>Search term + <kbd>Enter</kbd></td><td>Default search engine se search</td></tr><tr><td>Site ka naam + <kbd>Tab</kbd></td><td>Us site ke apne search mein chala jao (YouTube, Wikipedia etc.)</td></tr><tr><td>Site naam + <kbd>Ctrl + Enter</kbd></td><td><kbd>www.</kbd> + <kbd>.com</kbd> laga kar <strong>current tab</strong> mein kholo</td></tr><tr><td>Site naam + <kbd>Ctrl + Shift + Enter</kbd></td><td>Wahi, lekin <strong>naye window</strong> mein</td></tr><tr><td>Search term + <kbd>Alt + Enter</kbd></td><td><strong>Naye background tab</strong> mein Google search kholo</td></tr><tr><td><kbd>Ctrl + K</kbd> / <kbd>Ctrl + E</kbd></td><td>Page par kahin se bhi search shuru karo</td></tr><tr><td><kbd>↓</kbd> se highlight + <kbd>Shift + Delete</kbd></td><td>Address bar ki suggestion/prediction hata do</td></tr><tr><td><kbd>Ctrl + Shift + Delete</kbd></td><td>Browsing data (history/cache/cookies) clear karne ka box</td></tr><tr><td><kbd>Ctrl + H</kbd></td><td>History</td></tr><tr><td><kbd>Ctrl + J</kbd></td><td>Downloads</td></tr></table>
-<h3 id="c-page-ke-andar">C. Page ke andar</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>F5</kbd> / <kbd>Ctrl + R</kbd></td><td>Page refresh</td></tr><tr><td><kbd>Shift + F5</kbd> / <kbd>Ctrl + Shift + R</kbd></td><td><strong>Hard refresh</strong> — cache ignore karke fresh load</td></tr><tr><td><kbd>Esc</kbd></td><td>Loading rok do</td></tr><tr><td><kbd>Ctrl + F</kbd> / <kbd>F3</kbd></td><td>Find bar kholo (page mein search)</td></tr><tr><td><kbd>Ctrl + G</kbd></td><td>Agla match</td></tr><tr><td><kbd>Ctrl + Shift + G</kbd></td><td>Pichla match</td></tr><tr><td><kbd>Tab</kbd> / <kbd>Shift + Tab</kbd></td><td>Clickable items par aage / peeche jao</td></tr><tr><td><kbd>F7</kbd></td><td><strong>Caret browsing</strong> — page par text cursor, keyboard se select karo</td></tr><tr><td><kbd>Ctrl + F6</kbd></td><td>Seedha web content par jump</td></tr><tr><td><kbd>Ctrl + P</kbd></td><td>Print</td></tr><tr><td><kbd>Ctrl + S</kbd></td><td>Page save karo</td></tr><tr><td><kbd>Ctrl + O</kbd></td><td>Computer ki file Chrome mein kholo</td></tr><tr><td><kbd>Ctrl + U</kbd></td><td>Page ka source code</td></tr><tr><td><kbd>Ctrl + D</kbd></td><td>Current page bookmark karo</td></tr><tr><td><kbd>Ctrl + +</kbd></td><td>Zoom in</td></tr><tr><td><kbd>Ctrl + -</kbd></td><td>Zoom out</td></tr><tr><td><kbd>Ctrl + 0</kbd></td><td>Zoom default (100%)</td></tr><tr><td><kbd>Space</kbd> / <kbd>PgDn</kbd></td><td>Ek screen neeche scroll</td></tr><tr><td><kbd>Shift + Space</kbd> / <kbd>PgUp</kbd></td><td>Ek screen upar scroll</td></tr><tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>Page ke top / bottom par</td></tr><tr><td><kbd>Ctrl + ←</kbd> / <kbd>Ctrl + →</kbd></td><td>Text field mein pichla / agla word</td></tr><tr><td><kbd>Ctrl + Backspace</kbd></td><td>Text field mein pichla word delete</td></tr></table>
-<h3 id="d-links-tabs-ka-pro-use-mouse-ke-saath">D. Links &amp; Tabs ka Pro Use (mouse ke saath)</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + Click</kbd></td><td>Link ko background naye tab mein kholo</td></tr><tr><td><kbd>Ctrl + Shift + Click</kbd></td><td>Link ko foreground naye tab mein kholo (turant wahan jaao)</td></tr><tr><td><kbd>Shift + Click</kbd></td><td>Link ko naye <strong>window</strong> mein kholo</td></tr><tr><td><kbd>Alt + Click</kbd></td><td>Link ko <strong>download</strong> karo</td></tr><tr><td>Link ko tab par drag</td><td>Link ko current tab mein kholo</td></tr><tr><td>Link ko khaali tab strip par drag</td><td>Link naye tab mein khul jaayega</td></tr><tr><td>Tab ko strip se bahar drag</td><td>Tab naye window mein nikal jaayega</td></tr><tr><td>Drag karte waqt <kbd>Esc</kbd></td><td>Tab ko wapas original position par</td></tr><tr><td>Address ko Bookmarks bar par drag</td><td>Turant bookmark</td></tr><tr><td>Tab strip ke khaali hisse par double-click</td><td>Maximize ↔ window mode toggle</td></tr><tr><td><kbd>Ctrl + Scroll up/down</kbd></td><td>Zoom in / out</td></tr><tr><td><kbd>Shift + Scroll</kbd></td><td>Page ko left-right scroll</td></tr><tr><td>Back/Forward button par right-click</td><td>Us tab ki history list</td></tr></table>
-<h3 id="e-bookmarks">E. Bookmarks</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + D</kbd></td><td>Current page bookmark karo</td></tr><tr><td><kbd>Ctrl + Shift + D</kbd></td><td><strong>Saare khule tabs</strong> ek naye folder mein bookmark karo</td></tr><tr><td><kbd>Ctrl + Shift + O</kbd></td><td>Bookmark Manager</td></tr><tr><td><kbd>Ctrl + Shift + B</kbd></td><td>Bookmark bar dikhao / chhupao</td></tr></table>
-<h3 id="f-chrome-ke-features-tools">F. Chrome ke Features &amp; Tools</h3>
-<table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Shift + Esc</kbd></td><td><strong>Chrome ka Task Manager</strong> (kaunsa tab RAM kha raha hai)</td></tr><tr><td><kbd>Alt + F</kbd> / <kbd>Alt + E</kbd></td><td>Chrome ka main menu</td></tr><tr><td><kbd>Shift + Alt + T</kbd></td><td>Toolbar ke pehle item par focus</td></tr><tr><td><kbd>F10</kbd></td><td>Toolbar ke sabse right item par focus</td></tr><tr><td><kbd>F6</kbd></td><td>Focus cycle — dialogs, toolbars, address bar</td></tr><tr><td><kbd>Ctrl + Shift + M</kbd></td><td>Doosre user se login / Guest browsing</td></tr><tr><td><kbd>Alt + Shift + I</kbd></td><td>Feedback form kholo</td></tr><tr><td><kbd>Alt + Shift + A</kbd></td><td>Inactive dialogs par focus (accessibility)</td></tr><tr><td><kbd>Shift + Alt + N</kbd></td><td>Active tab mein <strong>split view</strong> kholo</td></tr><tr><td><kbd>Alt + Shift + R</kbd></td><td><strong>Reading Mode</strong> kholo</td></tr><tr><td><kbd>F12</kbd> / <kbd>Ctrl + Shift + J</kbd></td><td>Developer Tools</td></tr><tr><td><kbd>Ctrl + Shift + I</kbd></td><td>Developer Tools (Inspect)</td></tr><tr><td><kbd>Ctrl + Shift + C</kbd></td><td>Element inspect mode</td></tr><tr><td><kbd>F1</kbd></td><td>Chrome Help Center naye tab mein</td></tr></table>
-<blockquote><strong>Note:</strong> Windows par Settings kholne ka koi direct shortcut nahi hai — <kbd>Alt + F</kbd> phir <kbd>S</kbd> dabaao, ya address bar mein <kbd>chrome://settings</kbd> type karo. Mac par <kbd>⌘ + ,</kbd> chalta hai.</blockquote>
-<h2 id="part-2-settings-chrome-settings">PART 2 — SETTINGS (chrome://settings)</h2>
-<p>Address bar mein <kbd>chrome://settings</kbd> likho. Har section ka apna direct URL bhi hai (neeche diya gaya hai).</p>
-<h3 id="1-you-and-google-chrome-settings-people">1. You and Google — <kbd>chrome://settings/people</kbd></h3>
-<ul><li><strong>Sync and Google services</strong> — history, bookmarks, passwords, extensions sab devices par sync.</li><li><strong>Manage your Google Account</strong> — security, 2-Step Verification, My Activity delete karna.</li><li><strong>Import bookmarks and settings</strong> — Firefox/Edge se data laao.</li></ul>
-<h3 id="2-autofill-and-passwords-chrome-settings-autofill">2. Autofill and passwords — <kbd>chrome://settings/autofill</kbd></h3>
-<ul><li><strong>Password Manager</strong> — saved passwords, <strong>Checkup</strong> tab (leak hue password batata hai), passkeys, Windows Hello se protect karna.</li><li><strong>Payment methods</strong> — cards save karo.</li><li><strong>Addresses and more</strong> — address autofill.</li><li><strong>Enhanced autofill</strong> — chaaho to OFF rakho.</li></ul>
-<h3 id="3-privacy-and-security-chrome-settings-privacy">3. Privacy and security — <kbd>chrome://settings/privacy</kbd></h3>
-<ul><li><strong>Safety Check</strong> — ek click mein sab kuch scan.</li><li><strong>Delete browsing data</strong> — history, cookies, cache, passwords clear.</li><li><strong>Third-party cookies</strong> — &quot;Block third-party cookies&quot; chunna sabse privacy-friendly.</li><li><strong>Cookies and other site data</strong> — allow/block lists manage karo.</li><li><strong>Security</strong> — Standard protection ya <strong>Enhanced protection</strong> (URLs Google ko bhejta hai, par zyada safe).</li><li><strong>Ad privacy</strong> — Topics, Ad measurement, Ad personalization ko OFF kar sakte ho.</li><li><strong>Site settings</strong> — har site ke liye location, camera, mic, <strong>notifications</strong>, pop-ups, clipboard, sensors ka control. Notification spam hamesha ke liye yahan se band karo.</li></ul>
-<h3 id="4-performance-chrome-settings-performance">4. Performance — <kbd>chrome://settings/performance</kbd></h3>
-<ul><li><strong>Memory Saver</strong> — inactive tabs ki RAM free karta hai. Modes: Moderate / Balanced / Maximum + site exceptions.</li><li><strong>Energy Saver</strong> — laptop battery bachata hai.</li><li><strong>Preload pages</strong> (Speed section) — &quot;Extended preloading&quot; ON = pages jaldi khulte hain, thoda data/RAM zyada lagta hai.</li></ul>
-<h3 id="5-appearance-chrome-settings-appearance">5. Appearance — <kbd>chrome://settings/appearance</kbd></h3>
-<ul><li><strong>Theme</strong> — Chrome Web Store se custom theme.</li><li><strong>Customize Chrome</strong> — new tab page ka background, colour, shortcuts.</li><li><strong>Show Bookmarks bar</strong> — <kbd>Ctrl + Shift + B</kbd></li><li><strong>Show Home button</strong> — isme apna custom URL daal sakte ho.</li><li><strong>Font size</strong> — Very small se Very large; &quot;Customize fonts&quot; mein exact size + default page zoom.</li></ul>
-<h3 id="6-search-engine-chrome-settings-search">6. Search engine — <kbd>chrome://settings/search</kbd></h3>
-<ul><li>Default search engine badlo (Google, Bing, DuckDuckGo, YouTube…).</li><li><strong>Manage search engines and site search</strong> — yahan se custom keyword banao: jaise <kbd>yt</kbd> type karke <kbd>Tab</kbd> dabao to seedha YouTube search.</li></ul>
-<h3 id="7-on-startup-chrome-settings-onstartup">7. On startup — <kbd>chrome://settings/onStartup</kbd></h3>
-<ul><li>New Tab page / <strong>Continue where you left off</strong> (sabse useful) / Specific pages kholo.</li></ul>
-<h3 id="8-downloads-chrome-settings-downloads">8. Downloads — <kbd>chrome://settings/downloads</kbd></h3>
-<ul><li>Download location change.</li><li><strong>&quot;Ask where to save each file before downloading&quot;</strong> — ON kar lo.</li><li>Automatic downloads ki allow/block list.</li></ul>
-<h3 id="9-languages-chrome-settings-languages">9. Languages — <kbd>chrome://settings/languages</kbd></h3>
-<ul><li>Spell check, auto-translate, preferred language order, Chrome ka interface language.</li></ul>
-<h3 id="10-accessibility-chrome-settings-accessibility">10. Accessibility — <kbd>chrome://settings/accessibility</kbd></h3>
-<ul><li>Screen reader support, &quot;Highlight text cursor&quot;, <strong>Live Caption</strong> (video ke live captions).</li></ul>
-<h3 id="11-system-chrome-settings-system">11. System — <kbd>chrome://settings/system</kbd></h3>
-<ul><li><strong>Hardware acceleration</strong> — graphics card use karo (video stutter ho to OFF karke dekho).</li><li><strong>On-device AI</strong> — Chrome local AI models download karta hai; data bachana ho to OFF.</li><li>Chrome band hone ke baad background apps chalte rahein — yahan se.</li><li>Chrome ka built-in Task Manager kholo.</li></ul>
-<h3 id="12-extensions-chrome-extensions">12. Extensions — <kbd>chrome://extensions</kbd></h3>
-<ul><li>Installed extensions manage karo; <strong>Developer mode</strong> ON karke unpacked extension load karo.</li><li>Har extension ka <strong>Site access</strong> — &quot;On click&quot; sabse safe.</li><li><kbd>chrome://extensions/shortcuts</kbd> — <strong>har extension ka apna keyboard shortcut banao</strong> (bahut kaam ki cheez).</li></ul>
-<h3 id="13-ai-innovations-chrome-settings-ai">13. AI innovations — <kbd>chrome://settings/ai</kbd></h3>
-<ul><li>Gemini in Chrome, page content sharing, Tab organizer, History search, Compose, Page summarizer — jo nahi chahiye OFF karo.</li></ul>
-<h3 id="14-about-chrome-chrome-settings-help">14. About Chrome — <kbd>chrome://settings/help</kbd></h3>
-<ul><li>Version dekho aur <strong>Update</strong> karo.</li><li>Sab kuch default par laana ho: <kbd>chrome://settings/reset</kbd> (bookmarks aur extensions safe rehte hain).</li></ul>
-<h2 id="part-3-secret-chrome-pages">PART 3 — SECRET chrome:// PAGES</h2>
-<p>Address bar mein ye type karo:</p>
-<table><tr><th>Page</th><th>Kya milega</th></tr><tr><td><kbd>chrome://settings</kbd></td><td>Poori settings</td></tr><tr><td><kbd>chrome://help/shortcuts</kbd></td><td>Official keyboard shortcut list</td></tr><tr><td><kbd>chrome://flags</kbd></td><td><strong>Experimental features</strong> — dher saare hidden options (dhyaan se use karo)</td></tr><tr><td><kbd>chrome://version</kbd></td><td>Version, profile path, command-line flags</td></tr><tr><td><kbd>chrome://gpu</kbd></td><td>Graphics / hardware acceleration ki detail</td></tr><tr><td><kbd>chrome://net-internals</kbd></td><td>Network debugging, DNS cache flush</td></tr><tr><td><kbd>chrome://crashes</kbd></td><td>Crash reports</td></tr><tr><td><kbd>chrome://system</kbd></td><td>System + per-process detail</td></tr><tr><td><kbd>chrome://extensions</kbd></td><td>Extensions</td></tr><tr><td><kbd>chrome://extensions/shortcuts</kbd></td><td>Extensions ke custom shortcuts</td></tr><tr><td><kbd>chrome://bookmarks</kbd></td><td>Bookmark manager</td></tr><tr><td><kbd>chrome://history</kbd></td><td>History</td></tr><tr><td><kbd>chrome://downloads</kbd></td><td>Downloads</td></tr><tr><td><kbd>chrome://apps</kbd></td><td>Installed web apps (PWA)</td></tr><tr><td><kbd>chrome://profile-picker</kbd></td><td>Multiple profile manage karo</td></tr><tr><td><kbd>chrome://new-tab-page</kbd></td><td>Naya tab</td></tr><tr><td><kbd>chrome://media-internals</kbd></td><td>Video/audio playback debug</td></tr><tr><td><kbd>chrome://policy</kbd></td><td>Company/school policies</td></tr><tr><td><kbd>chrome://about</kbd></td><td>Saare available chrome:// URLs ki list</td></tr><tr><td><kbd>about:blank</kbd></td><td>Bilkul khaali page</td></tr></table>
-<h2 id="part-4-pro-tips-jo-log-kam-jaante-hain">PART 4 — PRO TIPS (jo log kam jaante hain)</h2>
-<ol><li><strong>Tab pin karo</strong> — tab par right-click → &quot;Pin&quot;. Chhota ho jaata hai aur hamesha rehta hai.</li><li><strong>Tab groups</strong> — tab par right-click → &quot;Add tab to new group&quot;. Colour + naam do, ek click mein poora group collapse.</li><li><strong>Vertical tabs</strong> (naya) — window ke top par right-click → &quot;Show Tabs Vertically&quot;. Zyada tabs ke liye best.</li><li><strong>Site ko App banao</strong> — 3-dot menu → Cast, save and share → <strong>Install page as app</strong>. Desktop icon, alag window, bina address bar.</li><li><strong>Reading Mode</strong> — page par right-click → &quot;Open in reading mode&quot;, ya <kbd>Alt + Shift + R</kbd>. Full-screen ya side panel, font/colour badalna, aur text ko bolkar sunna bhi.</li><li><strong>Split view</strong> — <kbd>Shift + Alt + N</kbd> se active tab mein split screen.</li><li><strong>Khule tabs dhoondhna</strong> — address bar mein tab ka title type karo; result ke neeche &quot;Switch to this tab&quot; aayega.</li><li><strong>Multiple profiles</strong> — top-right avatar se alag Google account/profile (office + personal).</li><li><strong>Password checkup</strong> — <kbd>chrome://settings/passwordCheckup</kbd> — leak hue passwords turant pata chalte hain.</li><li><strong>Chrome Task Manager</strong> (<kbd>Shift + Esc</kbd>) — RAM khaane wala tab pakdo aur end karo.</li><li><strong>`Ctrl + Shift + T`</strong> sabse life-saving shortcut hai — galti se band hua tab wapas.</li><li><strong>Incognito</strong> mein extensions default OFF rehte hain — <kbd>chrome://extensions</kbd> → extension ki details → &quot;Allow in Incognito&quot; ON karo.</li><li><strong>Extension ka apna shortcut</strong> — <kbd>chrome://extensions/shortcuts</kbd> (jaise &quot;copy page URL&quot; ke liye hotkey).</li><li><strong>Chrome reset</strong> — <kbd>chrome://settings/reset</kbd>.</li></ol>
-<h2 id="part-5-speed-up-checklist">PART 5 — SPEED UP CHECKLIST</h2>
-<ul><li>Extensions kam rakho (har extension RAM khaata hai) — <kbd>chrome://extensions</kbd>.</li><li><strong>Memory Saver</strong> ON + Balanced mode (<kbd>chrome://settings/performance</kbd>).</li><li><strong>Energy Saver</strong> ON (laptop par).</li><li>Preload pages → Extended preloading (fast loading, thoda extra data).</li><li>Hardware acceleration ON (<kbd>chrome://settings/system</kbd>); video stutter ho to OFF karke test karo.</li><li>Time-time par <kbd>Ctrl + Shift + Delete</kbd> → &quot;Cached images and files&quot; clear.</li><li><kbd>chrome://flags</kbd> ke experimental flags ko default par rakho — galat flag browser crash kara sakta hai.</li><li>Tab groups + Memory Saver se 30+ tabs bhi smoothly chalte hain.</li></ul>
-<p class="foot"><em>Shortcuts Google ki official Chrome help page se verify kiye gaye hain (support.google.com/chrome/answer/157179).</em></p>
+<section class="hero rv in">
+<h2 class="big" style="border:0;padding:0"><span>CHROME BEAST MODE</span><br><span>CHEAT SHEET</span></h2>
+<p id="typed"></p>
+<div class="stats">
+<div class="stat"><b data-n="150">0</b><span>Shortcuts</span></div>
+<div class="stat"><b data-n="14">0</b><span>Settings sections</span></div>
+<div class="stat"><b data-n="20">0</b><span>chrome:// pages</span></div>
+<div class="stat"><b data-n="14">0</b><span>Pro tips</span></div>
+</div>
+</section>
+<h2 id="part-1-shortcut-keys" class="rv"><span>PART 1 — SHORTCUT KEYS</span></h2>
+<h3 id="a-tab-window-sabse-zyada-kaam-aane-wale" class="rv">A. Tab &amp; Window (sabse zyada kaam aane wale)</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + T</kbd></td><td>Naya tab kholo</td></tr><tr><td><kbd>Ctrl + N</kbd></td><td>Naya window kholo</td></tr><tr><td><kbd>Ctrl + Shift + N</kbd></td><td>Naya <strong>Incognito</strong> window</td></tr><tr><td><kbd>Ctrl + W</kbd> / <kbd>Ctrl + F4</kbd></td><td>Current tab band karo</td></tr><tr><td><kbd>Ctrl + Shift + W</kbd></td><td>Poora <strong>window</strong> band karo (<kbd>Alt + F4</kbd> bhi)</td></tr><tr><td><kbd>Ctrl + Shift + T</kbd></td><td><strong>Band hua tab wapas kholo</strong> (order ke hisaab se, kai baar tak)</td></tr><tr><td><kbd>Ctrl + 1</kbd> se <kbd>Ctrl + 8</kbd></td><td>Us number wale tab par jump (Ctrl+1 = pehla tab)</td></tr><tr><td><kbd>Ctrl + 9</kbd></td><td>Sabse right (aakhri) tab par jump</td></tr><tr><td><kbd>Ctrl + Tab</kbd> / <kbd>Ctrl + PgDn</kbd></td><td>Agla tab</td></tr><tr><td><kbd>Ctrl + Shift + Tab</kbd> / <kbd>Ctrl + PgUp</kbd></td><td>Pichla tab</td></tr><tr><td><kbd>Ctrl + Shift + PgUp</kbd> / <kbd>Ctrl + Shift + PgDn</kbd></td><td>Tab ko left / right <strong>move</strong> karo</td></tr><tr><td><kbd>Alt + Home</kbd></td><td>Home page kholo</td></tr><tr><td><kbd>Alt + ←</kbd></td><td>History mein peeche</td></tr><tr><td><kbd>Alt + →</kbd></td><td>History mein aage</td></tr><tr><td><kbd>Alt + Space</kbd> phir <kbd>N</kbd></td><td>Window minimize karo</td></tr><tr><td><kbd>Alt + Space</kbd> phir <kbd>X</kbd></td><td>Window maximize karo</td></tr><tr><td><kbd>F11</kbd></td><td>Full screen on/off (band karne ke liye Esc dabaaye rakho)</td></tr><tr><td><kbd>F6</kbd> (2 baar) phir <kbd>Shift + Ctrl + H</kbd></td><td>Ek saath <strong>multiple tabs select</strong> karo</td></tr></table></div>
+<h3 id="b-address-bar-ke-magic-tricks" class="rv">B. Address Bar ke Magic Tricks</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + L</kbd> / <kbd>Alt + D</kbd> / <kbd>F6</kbd></td><td>Address bar par focus</td></tr><tr><td><kbd>Ctrl + F5</kbd></td><td>Cursor ko address bar mein le jao</td></tr><tr><td>Search term + <kbd>Enter</kbd></td><td>Default search engine se search</td></tr><tr><td>Site ka naam + <kbd>Tab</kbd></td><td>Us site ke apne search mein chala jao (YouTube, Wikipedia etc.)</td></tr><tr><td>Site naam + <kbd>Ctrl + Enter</kbd></td><td><kbd>www.</kbd> + <kbd>.com</kbd> laga kar <strong>current tab</strong> mein kholo</td></tr><tr><td>Site naam + <kbd>Ctrl + Shift + Enter</kbd></td><td>Wahi, lekin <strong>naye window</strong> mein</td></tr><tr><td>Search term + <kbd>Alt + Enter</kbd></td><td><strong>Naye background tab</strong> mein Google search kholo</td></tr><tr><td><kbd>Ctrl + K</kbd> / <kbd>Ctrl + E</kbd></td><td>Page par kahin se bhi search shuru karo</td></tr><tr><td><kbd>↓</kbd> se highlight + <kbd>Shift + Delete</kbd></td><td>Address bar ki suggestion/prediction hata do</td></tr><tr><td><kbd>Ctrl + Shift + Delete</kbd></td><td>Browsing data (history/cache/cookies) clear karne ka box</td></tr><tr><td><kbd>Ctrl + H</kbd></td><td>History</td></tr><tr><td><kbd>Ctrl + J</kbd></td><td>Downloads</td></tr></table></div>
+<h3 id="c-page-ke-andar" class="rv">C. Page ke andar</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>F5</kbd> / <kbd>Ctrl + R</kbd></td><td>Page refresh</td></tr><tr><td><kbd>Shift + F5</kbd> / <kbd>Ctrl + Shift + R</kbd></td><td><strong>Hard refresh</strong> — cache ignore karke fresh load</td></tr><tr><td><kbd>Esc</kbd></td><td>Loading rok do</td></tr><tr><td><kbd>Ctrl + F</kbd> / <kbd>F3</kbd></td><td>Find bar kholo (page mein search)</td></tr><tr><td><kbd>Ctrl + G</kbd></td><td>Agla match</td></tr><tr><td><kbd>Ctrl + Shift + G</kbd></td><td>Pichla match</td></tr><tr><td><kbd>Tab</kbd> / <kbd>Shift + Tab</kbd></td><td>Clickable items par aage / peeche jao</td></tr><tr><td><kbd>F7</kbd></td><td><strong>Caret browsing</strong> — page par text cursor, keyboard se select karo</td></tr><tr><td><kbd>Ctrl + F6</kbd></td><td>Seedha web content par jump</td></tr><tr><td><kbd>Ctrl + P</kbd></td><td>Print</td></tr><tr><td><kbd>Ctrl + S</kbd></td><td>Page save karo</td></tr><tr><td><kbd>Ctrl + O</kbd></td><td>Computer ki file Chrome mein kholo</td></tr><tr><td><kbd>Ctrl + U</kbd></td><td>Page ka source code</td></tr><tr><td><kbd>Ctrl + D</kbd></td><td>Current page bookmark karo</td></tr><tr><td><kbd>Ctrl + +</kbd></td><td>Zoom in</td></tr><tr><td><kbd>Ctrl + -</kbd></td><td>Zoom out</td></tr><tr><td><kbd>Ctrl + 0</kbd></td><td>Zoom default (100%)</td></tr><tr><td><kbd>Space</kbd> / <kbd>PgDn</kbd></td><td>Ek screen neeche scroll</td></tr><tr><td><kbd>Shift + Space</kbd> / <kbd>PgUp</kbd></td><td>Ek screen upar scroll</td></tr><tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>Page ke top / bottom par</td></tr><tr><td><kbd>Ctrl + ←</kbd> / <kbd>Ctrl + →</kbd></td><td>Text field mein pichla / agla word</td></tr><tr><td><kbd>Ctrl + Backspace</kbd></td><td>Text field mein pichla word delete</td></tr></table></div>
+<h3 id="d-links-tabs-ka-pro-use-mouse-ke-saath" class="rv">D. Links &amp; Tabs ka Pro Use (mouse ke saath)</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + Click</kbd></td><td>Link ko background naye tab mein kholo</td></tr><tr><td><kbd>Ctrl + Shift + Click</kbd></td><td>Link ko foreground naye tab mein kholo (turant wahan jaao)</td></tr><tr><td><kbd>Shift + Click</kbd></td><td>Link ko naye <strong>window</strong> mein kholo</td></tr><tr><td><kbd>Alt + Click</kbd></td><td>Link ko <strong>download</strong> karo</td></tr><tr><td>Link ko tab par drag</td><td>Link ko current tab mein kholo</td></tr><tr><td>Link ko khaali tab strip par drag</td><td>Link naye tab mein khul jaayega</td></tr><tr><td>Tab ko strip se bahar drag</td><td>Tab naye window mein nikal jaayega</td></tr><tr><td>Drag karte waqt <kbd>Esc</kbd></td><td>Tab ko wapas original position par</td></tr><tr><td>Address ko Bookmarks bar par drag</td><td>Turant bookmark</td></tr><tr><td>Tab strip ke khaali hisse par double-click</td><td>Maximize ↔ window mode toggle</td></tr><tr><td><kbd>Ctrl + Scroll up/down</kbd></td><td>Zoom in / out</td></tr><tr><td><kbd>Shift + Scroll</kbd></td><td>Page ko left-right scroll</td></tr><tr><td>Back/Forward button par right-click</td><td>Us tab ki history list</td></tr></table></div>
+<h3 id="e-bookmarks" class="rv">E. Bookmarks</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Ctrl + D</kbd></td><td>Current page bookmark karo</td></tr><tr><td><kbd>Ctrl + Shift + D</kbd></td><td><strong>Saare khule tabs</strong> ek naye folder mein bookmark karo</td></tr><tr><td><kbd>Ctrl + Shift + O</kbd></td><td>Bookmark Manager</td></tr><tr><td><kbd>Ctrl + Shift + B</kbd></td><td>Bookmark bar dikhao / chhupao</td></tr></table></div>
+<h3 id="f-chrome-ke-features-tools" class="rv">F. Chrome ke Features &amp; Tools</h3>
+<div class="card rv"><table><tr><th>Shortcut</th><th>Kaam</th></tr><tr><td><kbd>Shift + Esc</kbd></td><td><strong>Chrome ka Task Manager</strong> (kaunsa tab RAM kha raha hai)</td></tr><tr><td><kbd>Alt + F</kbd> / <kbd>Alt + E</kbd></td><td>Chrome ka main menu</td></tr><tr><td><kbd>Shift + Alt + T</kbd></td><td>Toolbar ke pehle item par focus</td></tr><tr><td><kbd>F10</kbd></td><td>Toolbar ke sabse right item par focus</td></tr><tr><td><kbd>F6</kbd></td><td>Focus cycle — dialogs, toolbars, address bar</td></tr><tr><td><kbd>Ctrl + Shift + M</kbd></td><td>Doosre user se login / Guest browsing</td></tr><tr><td><kbd>Alt + Shift + I</kbd></td><td>Feedback form kholo</td></tr><tr><td><kbd>Alt + Shift + A</kbd></td><td>Inactive dialogs par focus (accessibility)</td></tr><tr><td><kbd>Shift + Alt + N</kbd></td><td>Active tab mein <strong>split view</strong> kholo</td></tr><tr><td><kbd>Alt + Shift + R</kbd></td><td><strong>Reading Mode</strong> kholo</td></tr><tr><td><kbd>F12</kbd> / <kbd>Ctrl + Shift + J</kbd></td><td>Developer Tools</td></tr><tr><td><kbd>Ctrl + Shift + I</kbd></td><td>Developer Tools (Inspect)</td></tr><tr><td><kbd>Ctrl + Shift + C</kbd></td><td>Element inspect mode</td></tr><tr><td><kbd>F1</kbd></td><td>Chrome Help Center naye tab mein</td></tr></table></div>
+<blockquote class="rv"><strong>Note:</strong> Windows par Settings kholne ka koi direct shortcut nahi hai — <kbd>Alt + F</kbd> phir <kbd>S</kbd> dabaao, ya address bar mein <kbd>chrome://settings</kbd> type karo. Mac par <kbd>⌘ + ,</kbd> chalta hai.</blockquote>
+<h2 id="part-2-settings-chrome-settings" class="rv"><span>PART 2 — SETTINGS (chrome://settings)</span></h2>
+<p class="rv">Address bar mein <kbd>chrome://settings</kbd> likho. Har section ka apna direct URL bhi hai (neeche diya gaya hai).</p>
+<h3 id="1-you-and-google-chrome-settings-people" class="rv">1. You and Google — <kbd>chrome://settings/people</kbd></h3>
+<ul class="rv"><li><strong>Sync and Google services</strong> — history, bookmarks, passwords, extensions sab devices par sync.</li><li><strong>Manage your Google Account</strong> — security, 2-Step Verification, My Activity delete karna.</li><li><strong>Import bookmarks and settings</strong> — Firefox/Edge se data laao.</li></ul>
+<h3 id="2-autofill-and-passwords-chrome-settings-autofill" class="rv">2. Autofill and passwords — <kbd>chrome://settings/autofill</kbd></h3>
+<ul class="rv"><li><strong>Password Manager</strong> — saved passwords, <strong>Checkup</strong> tab (leak hue password batata hai), passkeys, Windows Hello se protect karna.</li><li><strong>Payment methods</strong> — cards save karo.</li><li><strong>Addresses and more</strong> — address autofill.</li><li><strong>Enhanced autofill</strong> — chaaho to OFF rakho.</li></ul>
+<h3 id="3-privacy-and-security-chrome-settings-privacy" class="rv">3. Privacy and security — <kbd>chrome://settings/privacy</kbd></h3>
+<ul class="rv"><li><strong>Safety Check</strong> — ek click mein sab kuch scan.</li><li><strong>Delete browsing data</strong> — history, cookies, cache, passwords clear.</li><li><strong>Third-party cookies</strong> — &quot;Block third-party cookies&quot; chunna sabse privacy-friendly.</li><li><strong>Cookies and other site data</strong> — allow/block lists manage karo.</li><li><strong>Security</strong> — Standard protection ya <strong>Enhanced protection</strong> (URLs Google ko bhejta hai, par zyada safe).</li><li><strong>Ad privacy</strong> — Topics, Ad measurement, Ad personalization ko OFF kar sakte ho.</li><li><strong>Site settings</strong> — har site ke liye location, camera, mic, <strong>notifications</strong>, pop-ups, clipboard, sensors ka control. Notification spam hamesha ke liye yahan se band karo.</li></ul>
+<h3 id="4-performance-chrome-settings-performance" class="rv">4. Performance — <kbd>chrome://settings/performance</kbd></h3>
+<ul class="rv"><li><strong>Memory Saver</strong> — inactive tabs ki RAM free karta hai. Modes: Moderate / Balanced / Maximum + site exceptions.</li><li><strong>Energy Saver</strong> — laptop battery bachata hai.</li><li><strong>Preload pages</strong> (Speed section) — &quot;Extended preloading&quot; ON = pages jaldi khulte hain, thoda data/RAM zyada lagta hai.</li></ul>
+<h3 id="5-appearance-chrome-settings-appearance" class="rv">5. Appearance — <kbd>chrome://settings/appearance</kbd></h3>
+<ul class="rv"><li><strong>Theme</strong> — Chrome Web Store se custom theme.</li><li><strong>Customize Chrome</strong> — new tab page ka background, colour, shortcuts.</li><li><strong>Show Bookmarks bar</strong> — <kbd>Ctrl + Shift + B</kbd></li><li><strong>Show Home button</strong> — isme apna custom URL daal sakte ho.</li><li><strong>Font size</strong> — Very small se Very large; &quot;Customize fonts&quot; mein exact size + default page zoom.</li></ul>
+<h3 id="6-search-engine-chrome-settings-search" class="rv">6. Search engine — <kbd>chrome://settings/search</kbd></h3>
+<ul class="rv"><li>Default search engine badlo (Google, Bing, DuckDuckGo, YouTube…).</li><li><strong>Manage search engines and site search</strong> — yahan se custom keyword banao: jaise <kbd>yt</kbd> type karke <kbd>Tab</kbd> dabao to seedha YouTube search.</li></ul>
+<h3 id="7-on-startup-chrome-settings-onstartup" class="rv">7. On startup — <kbd>chrome://settings/onStartup</kbd></h3>
+<ul class="rv"><li>New Tab page / <strong>Continue where you left off</strong> (sabse useful) / Specific pages kholo.</li></ul>
+<h3 id="8-downloads-chrome-settings-downloads" class="rv">8. Downloads — <kbd>chrome://settings/downloads</kbd></h3>
+<ul class="rv"><li>Download location change.</li><li><strong>&quot;Ask where to save each file before downloading&quot;</strong> — ON kar lo.</li><li>Automatic downloads ki allow/block list.</li></ul>
+<h3 id="9-languages-chrome-settings-languages" class="rv">9. Languages — <kbd>chrome://settings/languages</kbd></h3>
+<ul class="rv"><li>Spell check, auto-translate, preferred language order, Chrome ka interface language.</li></ul>
+<h3 id="10-accessibility-chrome-settings-accessibility" class="rv">10. Accessibility — <kbd>chrome://settings/accessibility</kbd></h3>
+<ul class="rv"><li>Screen reader support, &quot;Highlight text cursor&quot;, <strong>Live Caption</strong> (video ke live captions).</li></ul>
+<h3 id="11-system-chrome-settings-system" class="rv">11. System — <kbd>chrome://settings/system</kbd></h3>
+<ul class="rv"><li><strong>Hardware acceleration</strong> — graphics card use karo (video stutter ho to OFF karke dekho).</li><li><strong>On-device AI</strong> — Chrome local AI models download karta hai; data bachana ho to OFF.</li><li>Chrome band hone ke baad background apps chalte rahein — yahan se.</li><li>Chrome ka built-in Task Manager kholo.</li></ul>
+<h3 id="12-extensions-chrome-extensions" class="rv">12. Extensions — <kbd>chrome://extensions</kbd></h3>
+<ul class="rv"><li>Installed extensions manage karo; <strong>Developer mode</strong> ON karke unpacked extension load karo.</li><li>Har extension ka <strong>Site access</strong> — &quot;On click&quot; sabse safe.</li><li><kbd>chrome://extensions/shortcuts</kbd> — <strong>har extension ka apna keyboard shortcut banao</strong> (bahut kaam ki cheez).</li></ul>
+<h3 id="13-ai-innovations-chrome-settings-ai" class="rv">13. AI innovations — <kbd>chrome://settings/ai</kbd></h3>
+<ul class="rv"><li>Gemini in Chrome, page content sharing, Tab organizer, History search, Compose, Page summarizer — jo nahi chahiye OFF karo.</li></ul>
+<h3 id="14-about-chrome-chrome-settings-help" class="rv">14. About Chrome — <kbd>chrome://settings/help</kbd></h3>
+<ul class="rv"><li>Version dekho aur <strong>Update</strong> karo.</li><li>Sab kuch default par laana ho: <kbd>chrome://settings/reset</kbd> (bookmarks aur extensions safe rehte hain).</li></ul>
+<h2 id="part-3-secret-chrome-pages" class="rv"><span>PART 3 — SECRET chrome:// PAGES</span></h2>
+<p class="rv">Address bar mein ye type karo:</p>
+<div class="card rv"><table><tr><th>Page</th><th>Kya milega</th></tr><tr><td><kbd>chrome://settings</kbd></td><td>Poori settings</td></tr><tr><td><kbd>chrome://help/shortcuts</kbd></td><td>Official keyboard shortcut list</td></tr><tr><td><kbd>chrome://flags</kbd></td><td><strong>Experimental features</strong> — dher saare hidden options (dhyaan se use karo)</td></tr><tr><td><kbd>chrome://version</kbd></td><td>Version, profile path, command-line flags</td></tr><tr><td><kbd>chrome://gpu</kbd></td><td>Graphics / hardware acceleration ki detail</td></tr><tr><td><kbd>chrome://net-internals</kbd></td><td>Network debugging, DNS cache flush</td></tr><tr><td><kbd>chrome://crashes</kbd></td><td>Crash reports</td></tr><tr><td><kbd>chrome://system</kbd></td><td>System + per-process detail</td></tr><tr><td><kbd>chrome://extensions</kbd></td><td>Extensions</td></tr><tr><td><kbd>chrome://extensions/shortcuts</kbd></td><td>Extensions ke custom shortcuts</td></tr><tr><td><kbd>chrome://bookmarks</kbd></td><td>Bookmark manager</td></tr><tr><td><kbd>chrome://history</kbd></td><td>History</td></tr><tr><td><kbd>chrome://downloads</kbd></td><td>Downloads</td></tr><tr><td><kbd>chrome://apps</kbd></td><td>Installed web apps (PWA)</td></tr><tr><td><kbd>chrome://profile-picker</kbd></td><td>Multiple profile manage karo</td></tr><tr><td><kbd>chrome://new-tab-page</kbd></td><td>Naya tab</td></tr><tr><td><kbd>chrome://media-internals</kbd></td><td>Video/audio playback debug</td></tr><tr><td><kbd>chrome://policy</kbd></td><td>Company/school policies</td></tr><tr><td><kbd>chrome://about</kbd></td><td>Saare available chrome:// URLs ki list</td></tr><tr><td><kbd>about:blank</kbd></td><td>Bilkul khaali page</td></tr></table></div>
+<h2 id="part-4-pro-tips-jo-log-kam-jaante-hain" class="rv"><span>PART 4 — PRO TIPS (jo log kam jaante hain)</span></h2>
+<ol class="rv"><li><strong>Tab pin karo</strong> — tab par right-click → &quot;Pin&quot;. Chhota ho jaata hai aur hamesha rehta hai.</li><li><strong>Tab groups</strong> — tab par right-click → &quot;Add tab to new group&quot;. Colour + naam do, ek click mein poora group collapse.</li><li><strong>Vertical tabs</strong> (naya) — window ke top par right-click → &quot;Show Tabs Vertically&quot;. Zyada tabs ke liye best.</li><li><strong>Site ko App banao</strong> — 3-dot menu → Cast, save and share → <strong>Install page as app</strong>. Desktop icon, alag window, bina address bar.</li><li><strong>Reading Mode</strong> — page par right-click → &quot;Open in reading mode&quot;, ya <kbd>Alt + Shift + R</kbd>. Full-screen ya side panel, font/colour badalna, aur text ko bolkar sunna bhi.</li><li><strong>Split view</strong> — <kbd>Shift + Alt + N</kbd> se active tab mein split screen.</li><li><strong>Khule tabs dhoondhna</strong> — address bar mein tab ka title type karo; result ke neeche &quot;Switch to this tab&quot; aayega.</li><li><strong>Multiple profiles</strong> — top-right avatar se alag Google account/profile (office + personal).</li><li><strong>Password checkup</strong> — <kbd>chrome://settings/passwordCheckup</kbd> — leak hue passwords turant pata chalte hain.</li><li><strong>Chrome Task Manager</strong> (<kbd>Shift + Esc</kbd>) — RAM khaane wala tab pakdo aur end karo.</li><li><strong>`Ctrl + Shift + T`</strong> sabse life-saving shortcut hai — galti se band hua tab wapas.</li><li><strong>Incognito</strong> mein extensions default OFF rehte hain — <kbd>chrome://extensions</kbd> → extension ki details → &quot;Allow in Incognito&quot; ON karo.</li><li><strong>Extension ka apna shortcut</strong> — <kbd>chrome://extensions/shortcuts</kbd> (jaise &quot;copy page URL&quot; ke liye hotkey).</li><li><strong>Chrome reset</strong> — <kbd>chrome://settings/reset</kbd>.</li></ol>
+<h2 id="part-5-speed-up-checklist" class="rv"><span>PART 5 — SPEED UP CHECKLIST</span></h2>
+<ul class="rv"><li>Extensions kam rakho (har extension RAM khaata hai) — <kbd>chrome://extensions</kbd>.</li><li><strong>Memory Saver</strong> ON + Balanced mode (<kbd>chrome://settings/performance</kbd>).</li><li><strong>Energy Saver</strong> ON (laptop par).</li><li>Preload pages → Extended preloading (fast loading, thoda extra data).</li><li>Hardware acceleration ON (<kbd>chrome://settings/system</kbd>); video stutter ho to OFF karke test karo.</li><li>Time-time par <kbd>Ctrl + Shift + Delete</kbd> → &quot;Cached images and files&quot; clear.</li><li><kbd>chrome://flags</kbd> ke experimental flags ko default par rakho — galat flag browser crash kara sakta hai.</li><li>Tab groups + Memory Saver se 30+ tabs bhi smoothly chalte hain.</li></ul>
+<p class="foot rv"><em>Shortcuts Google ki official Chrome help page se verify kiye gaye hain (support.google.com/chrome/answer/157179).</em></p>
 </main>
-<div class="tip" onclick="this.style.display='none'" title="Band karne ke liye click karo">💡 Is page ko Chrome mein kholo → <b>Ctrl + D</b> dabao → bookmark ho jaayega. Print/PDF ke liye <b>Ctrl + P</b>. <em>(click = band)</em></div>
+<button id="top" title="Upar jao">↑</button>
+<div class="tip" onclick="this.style.display='none'" title="Band karne ke liye click karo">💡 Chrome mein kholo → <b>Ctrl + D</b> = bookmark. PDF ke liye <b>Ctrl + P</b>. <em>(click = band)</em></div>
 <script>
 const q=document.getElementById('q');
 q.addEventListener('input',()=>{
@@ -122,21 +191,43 @@ q.addEventListener('input',()=>{
     let visible=0;
     t.querySelectorAll('tr').forEach((tr,i)=>{
       if(i===0)return;
-      const txt=tr.innerText.toLowerCase();
-      const hit=term && txt.includes(term);
+      const hit=term && tr.innerText.toLowerCase().includes(term);
       tr.classList.toggle('hide', !!term && !hit);
       if(!term||hit)visible++;
-      tr.querySelectorAll('td').forEach(td=>{
-        td.innerHTML=td.innerHTML.replace(/<mark>/g,'').replace(/<\/mark>/g,'');
-      });
     });
-    t.style.display=(term && visible===0)?'none':'';
-  });
-  document.querySelectorAll('h3,ol,ul,blockquote').forEach(el=>{
-    if(!term){el.classList.remove('hide');return;}
-    el.classList.toggle('hide', !el.innerText.toLowerCase().includes(term));
+    t.closest('.card').style.display=(term && visible===0)?'none':'';
   });
 });
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.1});
+document.querySelectorAll('.rv,h2').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const t=+e.target.dataset.n;let v=0;
+  (function st(){v+=Math.max(1,Math.round(t/45));if(v>=t)v=t;
+   e.target.textContent=v+(t>=100?'+':'');if(v<t)requestAnimationFrame(st)})();
+}),{threshold:.5});
+document.querySelectorAll('[data-n]').forEach(el=>co.observe(el));
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('bar').style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')';
+  document.getElementById('top').classList.toggle('show',scrollY>600);
+},{passive:true});
+document.getElementById('top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const txt="> Ctrl+Shift+T se le kar chrome://flags tak — Chrome ka poora BEAST MODE, Hinglish mein _";
+let ti=0;(function ty(){const el=document.getElementById('typed');
+ if(ti<=txt.length){el.textContent=txt.slice(0,ti);ti++;setTimeout(ty,26)}})();
+const cv=document.getElementById('stars'),cx=cv.getContext('2d');let W,H,P=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+addEventListener('resize',rs);rs();
+for(let i2=0;i2<70;i2++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.7+.4,
+ s:Math.random()*.35+.08,h:Math.random()*360});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)(function tick(){
+ cx.clearRect(0,0,W,H);
+ for(const p of P){p.y-=p.s;if(p.y<-4){p.y=H+4;p.x=Math.random()*W}
+  cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fillStyle='hsla('+p.h+',80%,70%,.45)';cx.fill()}
+ requestAnimationFrame(tick)})();
 </script>
 </body>
 </html>
